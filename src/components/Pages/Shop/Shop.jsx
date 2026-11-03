@@ -17,7 +17,7 @@ export default function Shop() {
   const navigate = useNavigate();
   
   useEffect(() => {
-    fetch(`http://localhost:3000/api/shops/${shopId}`)
+    fetch(`/api/shops/${shopId}`)
       .then((res) => res.json())
       .then((data) => {
         setShop(data);

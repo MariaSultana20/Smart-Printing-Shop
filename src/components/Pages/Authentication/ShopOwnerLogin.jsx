@@ -15,7 +15,7 @@ export default function ShopOwnerLogin() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/auth/login/shop-owner",
+        "/api/auth/login/shop-owner",
         {
           method: "POST",
           headers: {

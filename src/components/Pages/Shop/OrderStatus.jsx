@@ -109,7 +109,7 @@ export default function OrderStatus({ selectedOrder, setShowModal, reSet }) {
             });
           } else {
             fetch(
-              `http://localhost:3000/api/orders/update/${order?.ORDER_ID}`,
+              `/api/orders/update/${order?.ORDER_ID}`,
               {
                 method: "PUT",
                 headers: {
@@ -168,7 +168,7 @@ export default function OrderStatus({ selectedOrder, setShowModal, reSet }) {
         if (result.isConfirmed) {
           try {
             const response = await fetch(
-              `http://localhost:3000/api/payment/update/${paymentId}`,
+              `/api/payment/update/${paymentId}`,
               {
                 method: "PUT",
                 headers: {

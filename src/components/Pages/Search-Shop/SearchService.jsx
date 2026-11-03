@@ -20,7 +20,7 @@ const SearchService = () => {
     if (area) queryString += `area=${area}&`;
     if (searchBy) queryString += `search_by_service=${searchBy}&`;
 
-    fetch(`http://localhost:3000/api/shops${queryString}`)
+    fetch(`/api/shops${queryString}`)
       .then((res) => res.json())
       .then((data) => setShops(data));
   }, [district, city, area, searchBy]);

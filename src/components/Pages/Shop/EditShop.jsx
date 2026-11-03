@@ -21,7 +21,7 @@ export default function EditShop() {
   const navigator = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/shops/${shopId}`)
+    fetch(`/api/shops/${shopId}`)
       .then((res) => res.json())
       .then((data) => {
         setShop(data);
@@ -82,7 +82,7 @@ export default function EditShop() {
     formData.append("activeHour", activeHour);
     formData.append("image", image);
 
-    const response = await fetch("http://localhost:3000/api/shop/update", {
+    const response = await fetch("/api/shop/update", {
       method: "PUT",
       body: formData,
     });

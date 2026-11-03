@@ -9,7 +9,7 @@ export default function ShopList() {
   const [shops, setShops] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/shops`)
+    fetch(`/api/shops`)
       .then((res) => res.json())
       .then((data) => setShops(data.data));
   }, []);
@@ -26,7 +26,7 @@ export default function ShopList() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const response = await fetch(
-          `http://localhost:3000/api/shops/${shopId}`,
+          `/api/shops/${shopId}`,
           {
             method: "DELETE",
           }

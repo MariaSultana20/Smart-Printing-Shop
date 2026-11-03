@@ -23,7 +23,7 @@ export default function OrderList() {
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/orders?shop_id=${shopId}`)
+    fetch(`/api/orders?shop_id=${shopId}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -62,7 +62,7 @@ export default function OrderList() {
     })
       .then(async (result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/api/orders/${orderId}`, {
+          fetch(`/api/orders/${orderId}`, {
             method: "DELETE",
           }).then(async (response) => {
             const result = await response.json();

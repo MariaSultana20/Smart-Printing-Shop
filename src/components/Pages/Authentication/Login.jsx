@@ -15,7 +15,7 @@ export default function Login() {
 
       try {
         const response = await fetch(
-          "http://localhost:3000/api/auth/login/customer",
+          "/api/auth/login/customer",
           {
             method: "POST",
             headers: {

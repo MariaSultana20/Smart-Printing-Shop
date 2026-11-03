@@ -49,7 +49,7 @@ export default function CreateShop() {
       activeHour,
     };
 
-    const response = await fetch("http://localhost:3000/api/shop/create", {
+    const response = await fetch("/api/shop/create", {
       method: "POST", // or 'PUT'
       body: formData,
     });

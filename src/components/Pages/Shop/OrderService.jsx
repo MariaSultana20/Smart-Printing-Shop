@@ -23,7 +23,7 @@ export default function OrderService() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/services/${serviceId}`)
+    fetch(`/api/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -104,7 +104,7 @@ export default function OrderService() {
     formData.append("paymentId", paymentId);
 
     try {
-      const response = await fetch("http://localhost:3000/api/order/create", {
+      const response = await fetch("/api/order/create", {
         method: "POST",
         body: formData,
       });

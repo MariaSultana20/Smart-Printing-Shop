@@ -23,7 +23,7 @@ export default function MyOrders() {
   const [cust_id] = useState(localStorage.getItem("CUST_ID"));
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/orders?cust_id=${cust_id}`)
+    fetch(`/api/orders?cust_id=${cust_id}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -89,7 +89,7 @@ export default function MyOrders() {
             });
           } else {
             fetch(
-              `http://localhost:3000/api/orders/update/${order?.ORDER_ID}`,
+              `/api/orders/update/${order?.ORDER_ID}`,
               {
                 method: "PUT",
                 headers: {

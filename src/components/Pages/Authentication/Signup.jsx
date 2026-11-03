@@ -18,7 +18,7 @@ export default function Signup() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/auth/signup/customer",
+        "/api/auth/signup/customer",
         {
           method: "POST",
           headers: {

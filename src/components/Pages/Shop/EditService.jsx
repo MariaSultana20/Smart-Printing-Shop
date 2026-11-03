@@ -22,7 +22,7 @@ export default function EditService() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/shops/${shopId}`)
+    fetch(`/api/shops/${shopId}`)
       .then((res) => res.json())
       .then((data) => {
         setShop(data);
@@ -65,7 +65,7 @@ export default function EditService() {
 
     console.log("updatedService", updatedService);
 
-    const response = await fetch(`http://localhost:3000/api/service/update`, {
+    const response = await fetch(`/api/service/update`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -99,7 +99,7 @@ export default function EditService() {
     console.log("newService", newService);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/service/create`, {
+      const response = await fetch(`/api/service/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +163,7 @@ export default function EditService() {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:3000/api/service/delete/${editorMode}`,
+            `/api/service/delete/${editorMode}`,
             {
               method: "DELETE",
               headers: {

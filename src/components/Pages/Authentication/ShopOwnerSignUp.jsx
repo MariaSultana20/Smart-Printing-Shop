@@ -19,7 +19,7 @@ export default function ShopOwnerSignUp() {
     console.log("shopOwner", shopOwner);
 
     const response = await fetch(
-      "http://localhost:3000/api/auth/signup/shop-owner",
+      "/api/auth/signup/shop-owner",
       {
         method: "POST", // or 'PUT'
         headers: {
